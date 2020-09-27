@@ -1,1 +1,308 @@
 
+    <!-- Header image -->
+    <header id="home" class="see-trough-nav scrollspy">
+        <div class="parallax-container overlay padding">
+            <div class="balign-wrapper h100">
+                <h1 class="white-text">Modeling</h1>
+                <div class="parallax">
+                    <img class="responsive-img push-up"
+                        src="https://2019.igem.org/wiki/images/1/10/T--Wageningen_UR--Modeling_header.jpeg"
+                        alt="Safety Header">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="Overview" class="scrollspy">
+        <div class="container padding-bottom">
+            <h2 class="grape-purple-text">Overview</h2>
+            <div class="divider-small grape-purple"></div>
+            <p>Modeling nowadays has become crucial to all scientific fields and synthetic biology is no exception.
+                Computational methods have the ability to provide answers to questions that cannot be obtained in the
+                lab. With Xylencer, we wanted to leverage this power and answer questions that are key in developing our
+                phage therapy. We incorporated a broad array of different computational techniques to make full use of
+                computational methods available in this day and age. This includes the use of temporal and spatial
+                models, a custom physical protein modeling workflow, comparative genomics, and machine learning. This
+                page serves to give an overview of the different questions we answered with computational techniques and
+                links are provided for more in-depth information.
+            </p>
+        </div>
+    </section>
+
+    <section id="Spatial_Spread" class="scrollspy">
+        <div class="olive-green padding">
+            <div class="container">
+                <h3 class="white-text"> Spatial temporal modelling</h3>
+                <div class="divider-small white margin"></div>
+                <h5 class="white-text">How will our therapy function in a real-world setting? </h5>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="row valign-wrapper-large no-margin-bottom">
+            <div class="col s12 m12 l5">
+                <p>Testing the application of phage therapy on a single field or larger space is far beyond the scope of
+                    an iGEM project. Still, this is one of the crucial stages in the Xylencer project. To gain a better
+                    understanding of how our therapy would spread and how efficient it would be at curing an <em>X.
+                        fastidiosa</em> infection, we employed spatial-temporal modeling. Since <em>X. fastidiosa</em>
+                    poses a big threat to the European continent, the EU already created models that can be used to
+                    assess the efficiency of different biocontainment approaches [1]. We took these models as a starting
+                    point and incorporated the Xylencer phages to assess the efficiency of our solution. This first
+                    required the construction of a model for the interaction between the Xylencer phage and an <em>X.
+                        fastidiosa</em> colony inside of the plant. Combining this model with the latest EU model
+                    yielded our final spatial spread model. From this model we could conclude that the Xylencer phages
+                    can be effective at combatting <em>X. fastidiosa</em>, finally providing the much-needed cure.
+                </p>
+            </div>
+
+            <div class="col s12 m12 l7 no-padding">
+                <figure class="paragraph-width white-popup">
+                    <img src="https://2019.igem.org/wiki/images/e/e9/T--Wageningen_UR--Hetty_Figure2.jpg"
+                        class="responsive-img materialboxed">
+                    <figcaption><em>Figure 1:</em> An illustration on the method of the spatial model. A mesh grid is
+                        created where each mesh point symbolizes a tree. For each tree the V(the abundance of vectors
+                        colonized by <em>X. fastidiosa</em>) an D(the disease level of the plant) is computed.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="container padding-bottom center-align">
+        <a href="https://2019.igem.org/Team:Wageningen_UR/Results/Spatial_Spread"
+            class="btn btn-large white grape-purple-text waves-effect margin">Read more <i
+                class="material-icons right">navigate_next</i> </a>
+    </div>
+
+
+    <section id="Machine_Learning" class="scrollspy">
+        <div class="olive-green padding">
+            <div class="container">
+                <h3 class="white-text"> Genome-scale machine learning</h3>
+                <div class="divider-small white margin"></div>
+                <h5 class="white-text">How do we ensure our phage delivery bacterium is safe? </h5>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-wrapper">
+            <div class="row valign-wrapper-large">
+                <div class="col s12 m12 l5 push-l7">
+                    <p> We revolutionize phage therapy with the <a href="https://2019.igem.org/Team:Wageningen_UR/Design#Delivery">phage delivery bacterium</a> (PDB). However, selecting a
+                        compatible and safe strain that can serve this role, is a complicated matter. Phage replication
+                        requires a high similarity in cell metabolism between <em>X. fastidiosa</em> and the PDB. This
+                        is problematic as most species closely related to <em>Xylella</em> are known to be
+                        phytopathogenic, making them unsafe to use. A few species have reported non-pathogenic strains,
+                        but some of these strains were later shown to be pathogenic under different testing
+                        conditions [2]. This makes the classification of the other non-pathogens doubtful. By combining
+                        comparative genomics with machine learning, we found a genetic basis for non-pathogenicity and
+                        selected a set of non-pathogens that conform to this genetic basis. With this information, we
+                        selected <em>Xanthomonas arboricola</em> strain CITA 44 as the prime candidate for our PDB. By
+                        analyzing this model, we also identified both the lack of a Type III secretion system and a lack
+                        of transposons linked to specific pathogenicity islands, as important factors for
+                        non-pathogenicity in the <em>Xanthomonas</em> genus.
+                    </p>
+
+                </div>
+                <div class="col s12 m12 l7 pull-l5">
+                    <figure>
+                        <img class="responsive-img materialboxed"
+                            src="https://2019.igem.org/wiki/images/9/99/T--Wageningen_UR--Dennie_model_performance.png">
+                        <figcaption><em>Figure 2:</em> Results of the average prediction of 100 machine learning models.
+                            Dots resemble individual strains out of a manually curated pathogenicity dataset.
+                            Pathogenicity is indicated by the color. Strains that were miss predicted by more than 5% of
+                            the models are labeled as “missed” and are symbolized by a crossed-out dot. This figure
+                            shows that overall performance is strong, but that there are three main areas with conflicting
+                            reports on pathogenicity and thus cannot be reliably labeled as either pathogen or
+                            non-pathogen. </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-bottom center-align">
+            <a href="http://2019.igem.org/Team:Wageningen_UR/Results/Pathogenicity"
+                class="btn btn-large white grape-purple-text waves-effect margin">Read more <i
+                    class="material-icons right">navigate_next</i> </a>
+        </div>
+    </section>
+
+    <section id="Physical_Modeling" class="scrollspy">
+        <div class="olive-green padding">
+            <div class="container">
+                <h3 class="white-text">Physical Modeling</h3>
+                <div class="divider-small white margin"></div>
+                <h5 class="white-text">Would our protein fusions be theoretically possible? </h5>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p>An important part of our therapy is the enhanced Xylencer phages. The creation of these phages
+                hinges on a fusion of the phage capsid protein and an adhesion protein. These capsid molecules
+                form complex multimers to construct the phage capsid and a fusion protein must not restrict the
+                capsid’s ability to assemble. To asses if the capsid is not sterically hindered by the fusion,
+                we make use of protein modeling.</p>
+        </div>
+        <div class="content-wrapper">
+            <div class="row valign-wrapper-large">
+                <div class="col s12 m12 l5">
+                    <p> Modeling of regular proteins can nowadays be easily performed by using a single web server.
+                        However, fusion proteins cannot be aligned to a single template since they are composed of
+                        multiple proteins. This makes it hard to easily simulate them in high quality. We developed a
+                        workflow (described below) based on freely accessible web services, that allows anyone with
+                        basic knowledge on protein modeling, to model and visualize fusion proteins. Using this
+                        workflow, we were able to show that either the chitin-binding domain of chitinase A1
+                        (<em>Bacillus circulans</em>) or a GFP can be fused to the decorator protein of phage lambda,
+                        our model phage, without obstructing the <a
+                            href="https://2019.igem.org/Team:Wageningen_UR/Results/Phage_Engineering">trimer-interface</a>.
+                        We also used the same workflow to visualize the integration of quorum sensing fusion protein
+                        RpfCch into the outer membrane of the phage delivery bacterium <a
+                            href="https://2019.igem.org/Team:Wageningen_UR/Results/DSF_Sensing_Circuit">phage delivery
+                            bacterium</a>.
+                    </p>
+                </div>
+                <div class="col s12 m12 l7">
+                    <figure class="white-popup">
+                        <img class="responsive-img materialboxed"
+                            src="https://2019.igem.org/wiki/images/b/b1/T--Wageningen_UR--protein_modeling.png ">
+                        <figcaption><em>Figure 3:</em> Overview of the fusion protein modelling workflow. The workflow
+                            starts with predicting domains, those domains are individually modelled and trimmed. Then
+                            the full sequence is threaded through the created models and the linkers are modeled <em>ab
+                                initio</em>, to yield a high-quality model. </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="container padding-bottom">
+            <ul class="collapsible xylencer purpleize-border foldout minify">
+                <li>
+                    <div class="collapsible-header">
+                        <div class="collapsible-title minify">
+                            <span>Fusion protein modeling workflow </span>
+                            <i class="material-icons">arrow_downward</i>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <p> A prevalent hypothesis on how proteins fold is that protein domain, the smallest functional
+                            units of proteins, fold first and do so individually. Only after the domains have folded, do
+                            the remaining parts of the protein fold in such a way as to minimize the free energy in the
+                            entire protein. By closely following these biological phenomena, our workflow aims to
+                            achieve the best possible model. The workflow starts with the detection of the different
+                            protein domains and individually modeling all the detected domains. Finally, the full
+                            sequence is threaded through the domain models and the connecting linkers are modeled <em>ab
+                                initio</em> (Figure 3).
+                        </p>
+                        <h5 class="grape-purple-text padding-top">Methods</h5>
+                        <div class="divider grape-purple"></div>
+                        <p> Protein domains are detected by running the entire sequence through the ThreadomEX [3] <a
+                                href="https://zhanglab.ccmb.med.umich.edu/ThreaDomEx/">web server</a>. Detected domains
+                            are modeled using the award-winning I-Tasser [4] <a
+                                href="https://zhanglab.ccmb.med.umich.edu/I-TASSER/">web server</a>. Generated models
+                            are manually trimmed to remove linker sequences using <a
+                                href="https://www.rbvi.ucsf.edu/chimerax/">UCF ChimeraX</a> [5], by removing approximately 5 to 20 amino
+                            acids at the start and end of the domains, allowing for more flexible modeling. The trimmed
+                            models are renumbered and assembled by the AIDA [6] <a href="http://aida.godziklab.org/">web
+                                server</a>. Additionally, for RpfCch the positioning in the outer membrane was
+                            calculated using the OPM [7] <a href="https://opm.phar.umich.edu/ppm_server">web server</a>.
+                            The final models were visualized using ChimeraX.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content-wrapper-medium">
+            <div class="row no-margin-bottom">
+                <div class="col s12 m10 offset-m1 l8 offset-l2">
+                    <h4 class="grape-purple-text">Model Examples</h4>
+                    <div class="divider-small grape-purple"></div>
+                    <figure class="paragraph-width">
+                        <video class="responsive-video z-depth-1"
+                            src="https://2019.igem.org/wiki/images/b/bb/T--Wageningen_UR--RpfCch.webm" autoplay muted
+                            loop>
+                        </video>
+                        <figcaption>Chimeric DSF sensor RpfCch positioned in the outer membrane. The protein is rainbow
+                            colored with the N-terminus blue and C-terminus red. The outer membrane is visualized in red
+                            and the inner membrane in blue.</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l6">
+                    <figure class="paragraph-width">
+                        <video class="responsive-video z-depth-1"
+                            src="https://2019.igem.org/wiki/images/b/b1/T--Wageningen_UR--GpD_frameshift_ChitA.webm"
+                            autoplay muted loop></video>
+                        <figcaption> Lambda decorator protein GpD fused to the chitin binding domain of adhesin
+                            ChitA. Blue = GpD, yellow = linker, Red = ChitA domain.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col s12 m12 l6">
+                    <figure class="paragraph-width">
+                        <video class="responsive-video z-depth-1"
+                            src="https://2019.igem.org/wiki/images/0/00/T--Wageningen_UR--GpD_GfP.webm" autoplay muted
+                            loop></video>
+                        <figcaption>Lambda decorator protein Gpd fused to GfP. Blue = GfP, yellow = linker,
+                            Green = GfP.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="References" class="scrollspy">
+        <div class="container padding-bottom paragraph-width">
+            <ul class="collapsible xylencer popout greenify margin">
+                <li>
+                    <div class="collapsible-header grape-purple-text">
+                        <div class="collapsible-title minify">
+                            <span>References</span>
+                            <i class="material-icons">arrow_downward</i>
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <ol class="references margin-top">
+                            <li>C. Bragard et al., “Update of the Scientific Opinion on the risks to
+                                plant health posed
+                                by Xylella fastidiosa in the EU territory,” EFSA J., vol. 17, no. 5, May
+                                2019. </li>
+                            <li>Ferrante, P., & Scortichini, M. (2018). Xanthomonas arboricola pv.
+                                fragariae: a
+                                confirmation of the pathogenicity of the pathotype strain. European
+                                journal of plant
+                                pathology, 150(3), 825-829. </li>
+                            <li>Wang, Y., Wang, J., Li, R., Shi, Q., Xue, Z., & Zhang, Y. (2017).
+                                ThreaDomEx: a unified
+                                platform for predicting continuous and discontinuous protein domains by
+                                multiple-threading and segment assembly. Nucleic acids research, 45(W1),
+                                W400-W407.
+                            </li>
+                            <li>Roy, A., Kucukural, A., & Zhang, Y. (2010). I-TASSER: a unified platform
+                                for automated
+                                protein structure and function prediction. Nature protocols, 5(4), 725.
+                            </li>
+                            <li>Goddard, T. D., Huang, C. C., Meng, E. C., Pettersen, E. F., Couch, G.
+                                S., Morris, J.
+                                H., & Ferrin, T. E. (2018). UCSF ChimeraX: Meeting modern challenges in
+                                visualization
+                                and analysis. Protein Science, 27(1), 14-25. </li>
+                            <li>Xu, D., Jaroszewski, L., Li, Z., & Godzik, A. (2015). AIDA: ab initio
+                                domain assembly
+                                for automated multi-domain protein structure prediction and
+                                domain–domain interaction
+                                prediction. Bioinformatics, 31(13), 2098-2105. </li>
+                            <li>Lomize, M. A., Pogozheva, I. D., Joo, H., Mosberg, H. I., & Lomize, A.
+                                L. (2011). OPM
+                                database and PPM web server: resources for positioning of proteins in
+                                membranes. Nucleic
+                                acids research, 40(D1), D370-D376.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
