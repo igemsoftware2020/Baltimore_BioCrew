@@ -17,24 +17,21 @@
         <div class="container padding-bottom">
             <h2 class="grape-purple-text">Overview</h2>
             <div class="divider-small grape-purple"></div>
-            <p>Modeling nowadays has become crucial to all scientific fields and synthetic biology is no exception.
-                Computational methods have the ability to provide answers to questions that cannot be obtained in the
-                lab. With Xylencer, we wanted to leverage this power and answer questions that are key in developing our
-                phage therapy. We incorporated a broad array of different computational techniques to make full use of
-                computational methods available in this day and age. This includes the use of temporal and spatial
-                models, a custom physical protein modeling workflow, comparative genomics, and machine learning. This
-                page serves to give an overview of the different questions we answered with computational techniques and
-                links are provided for more in-depth information.
+            <p>The goal of our project is to use engineering to improve the growth of cyanobacteria in low iron environments. 
+                Our job in Math Modeling is to model the growth of both the un-engineered and engineered cyanobacteria in different concentrations of iron. 
+                We based our model on the Monod Model for substrate-limited cell growth. 
+                Experiments were conducted comparing the growth of different engineered cyanobacteria in different levels of iron.
             </p>
+          
         </div>
     </section>
 
     <section id="Spatial_Spread" class="scrollspy">
         <div class="olive-green padding">
             <div class="container">
-                <h3 class="white-text"> Spatial temporal modelling</h3>
+                <h3 class="white-text"> The Monod Model</h3>
                 <div class="divider-small white margin"></div>
-                <h5 class="white-text">How will our therapy function in a real-world setting? </h5>
+                <h5 class="white-text">How did we create a growth curve?</h5>
             </div>
         </div>
     </section>
@@ -42,17 +39,18 @@
     <div class="content-wrapper">
         <div class="row valign-wrapper-large no-margin-bottom">
             <div class="col s12 m12 l5">
-                <p>Testing the application of phage therapy on a single field or larger space is far beyond the scope of
-                    an iGEM project. Still, this is one of the crucial stages in the Xylencer project. To gain a better
-                    understanding of how our therapy would spread and how efficient it would be at curing an <em>X.
-                        fastidiosa</em> infection, we employed spatial-temporal modeling. Since <em>X. fastidiosa</em>
-                    poses a big threat to the European continent, the EU already created models that can be used to
-                    assess the efficiency of different biocontainment approaches [1]. We took these models as a starting
-                    point and incorporated the Xylencer phages to assess the efficiency of our solution. This first
-                    required the construction of a model for the interaction between the Xylencer phage and an <em>X.
-                        fastidiosa</em> colony inside of the plant. Combining this model with the latest EU model
-                    yielded our final spatial spread model. From this model we could conclude that the Xylencer phages
-                    can be effective at combatting <em>X. fastidiosa</em>, finally providing the much-needed cure.
+                <p>We are modeling the growth of cells based on how much iron they have using the Monod Model.
+               The Monod Model is a system of differential equations which use information about the properties of the bacteria and the substrate to generate a growth curve. 
+                The graph is composed of an exponential growth curve which, at the point where the substrate becomes limited, levels out with a very small growth. 
+                We derived the basis for the <a href="http://dx.doi.org/10.1016/B978-0-12-394626-3.00003-X">Monod Model from the Maier & Pepper chapter on Bacterial Growth (2015)</a>
+         
+                </p>
+                <p>
+                    We intend to gather experimental data from the wetlab groups to conduct an optimization. 
+                    This will allow us to fit the data points to a curve and let us make mathematical conclusions about the effectiveness of the inserted genes. 
+                    The parameters for the Monod Model are Mu_max, K_s, S(t), and Z. Mu_max is the maximum growth rate of the bacteria, which determines the steepness of the exponential growth phase;
+                    K_s is a constant that depends upon the bacteria and the substrate and is the concentration of substrate which make the bacteria grow at a rate of ½*Mu_max. 
+                    S(t) is the level of substrate, and Z is the relationship between how much substrate is lost to produce a number of cells.
                 </p>
             </div>
 
@@ -78,9 +76,9 @@
     <section id="Machine_Learning" class="scrollspy">
         <div class="olive-green padding">
             <div class="container">
-                <h3 class="white-text"> Genome-scale machine learning</h3>
+                <h3 class="white-text"> Using Published Experimental Data for Optimization</h3>
                 <div class="divider-small white margin"></div>
-                <h5 class="white-text">How do we ensure our phage delivery bacterium is safe? </h5>
+                <h5 class="white-text"></h5>
             </div>
         </div>
     </section>
@@ -89,21 +87,21 @@
         <div class="content-wrapper">
             <div class="row valign-wrapper-large">
                 <div class="col s12 m12 l5 push-l7">
-                    <p> We revolutionize phage therapy with the <a href="https://2019.igem.org/Team:Wageningen_UR/Design#Delivery">phage delivery bacterium</a> (PDB). However, selecting a
-                        compatible and safe strain that can serve this role, is a complicated matter. Phage replication
-                        requires a high similarity in cell metabolism between <em>X. fastidiosa</em> and the PDB. This
-                        is problematic as most species closely related to <em>Xylella</em> are known to be
-                        phytopathogenic, making them unsafe to use. A few species have reported non-pathogenic strains,
-                        but some of these strains were later shown to be pathogenic under different testing
-                        conditions [2]. This makes the classification of the other non-pathogens doubtful. By combining
-                        comparative genomics with machine learning, we found a genetic basis for non-pathogenicity and
-                        selected a set of non-pathogens that conform to this genetic basis. With this information, we
-                        selected <em>Xanthomonas arboricola</em> strain CITA 44 as the prime candidate for our PDB. By
-                        analyzing this model, we also identified both the lack of a Type III secretion system and a lack
-                        of transposons linked to specific pathogenicity islands, as important factors for
-                        non-pathogenicity in the <em>Xanthomonas</em> genus.
+                    <p>
+                        To develop a method for optimizing parameters from the Monod Model, we looked for published experimental data to begin. 
+                    </p>
+                    <p> In 2017, Patel et al. published a study characterizing the growth of seven unique species of cyanobacteria. 
+                        One experiment here, grew Synechocystis PCC 6803 in media for 19 days and measured the optical density each day. 
+                        Since we have been designing experiments for Synechocystis in our lab, we used Patel’s data as a starting point for optimization.  
                     </p>
 
+                    <p>
+                        Optimization is a method we use to identify the best-fit values for parameters (Mu_max, K_s, and Z) for this system. 
+                        We performed optimization using the lsqnonlin function in Matlab -- this is a non-linear least squares data-fitting solver. 
+                        We used this function to find parameters that would minimize the difference between our experimental data and simulation data. 
+                        In order to do that, we need to provide initial guesses and bound (lower and upper) for each parameter. 
+                        We also provided initial values for the concentration of cells and substrate at the beginning of the experiment, which is also shown in the table below). 
+                    </p>
                 </div>
                 <div class="col s12 m12 l7 pull-l5">
                     <figure>
