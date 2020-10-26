@@ -331,6 +331,7 @@
                         <p>Adam Hoffensetz and Angelique Allen analyzed the cyanobacteria growth data to convert measurement units and calculate doubling time.</p>
                         <p>Daniel Fucich, a technician at University of Maryland Center for Environmental Science (UMCES), helped us improve our protocol for growing our cyanobacteria by advising the team on the best light intensity and temperature for Synechococcus CB0101.</p>
                         <p>The Institute of Marine and Environmental Technology (IMET) at UMCES provided us with a starting culture of Synechococcus CB0101.</p>
+                        <p>Lisa Schiefele and the Baltimore Underground Science Space provided lab space, reagents, and equipment.</p>
                         <p>Breanna Takacs and Kalen Clifton gave guidance to the Characterization team regarding experimental design, data analysis, and scientific writing.</p>
                     </div>
                 </li>
@@ -369,7 +370,9 @@
                         </div>
                     </div>
                     <div class="collapsible-body">
-                        <p></p>
+                        <p>Alex Misiaszek, Avipsa Hamal, Heaven Cross, Kayla Le, Nathan Dayie, and Shubhan Bhat designed and synthesized variations to the iron-sensitive promoter system created by the ECUST 2018 iGEM team. These students are currently testing whether these promoters are more sensitive to lower iron concentrations.</p>
+                        <p>Lisa Schiefele and the Baltimore Underground Science Space provided lab space, reagents, and equipment.</p>
+                        <p>Wangui Mbuguiro provided guidance to the team regarding experimental design, data analysis, and scientific writing.</p>
                      </div>
                 </li>
             </ul>
@@ -386,7 +389,10 @@
                         </div>
                     </div>
                     <div class="collapsible-body">
-                        <p></p>
+                        <p>Nathan Dayie, Max Swann, and Maria Lyons have modeled iron-limited cell growth using differential equations-based modeling in Matlab. They have used their models to estimate parameters for cyanobacteria in a previously published study (Patel, Sundaram, Patel, Kalra, 2017) using non-linear optimization techniques. These students have analyzed the results of their modeling to identify ways to improve their own study of cyanobacteria growth.</p>
+                        <p>The team received Matlab licenses through the Mathworks grant to project teams competing in iGEM.</p>
+                        <p>Lisa Schiefele and the Baltimore Underground Science Space provided lab space, reagents, and equipment.</p>
+                        <p>Andy Johnston and Wangui Mbuguiro have assisted the students in learning concepts of mathematical modeling in biology, programming in Matlab, analyzing model results, and scientific writing.</p>
                      </div>
                 </li>
             </ul>
