@@ -7,6 +7,6 @@ We are a group of high school students working out of Baltimore, Maryland, on th
 # Project Apps
 To show the data collected by the Contributions sub-team of our group, we made two data apps with RStudio's shiny package. The first one shows you the graphs of the growth of Synechococcus CB0101 under different iron concentrations. You can view the graphs with Secchi Depth measurements or OD measurements.
 
-- [Cyanobacterial Growth Under Various Iron Concentrations] (https://samf21.shinyapps.io/iGEM_Data_Test/)
+- [Cyanobacterial Growth Under Various Iron Concentrations](https://samf21.shinyapps.io/iGEM_Data_Test/)
 
 The code for the Rmarkdown files that generate the shiny apps can be found in the app folder in this repo.
