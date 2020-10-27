@@ -10,4 +10,4 @@ To show the data collected by the Contributions sub-team of our group, we made t
 - [Cyanobacterial Growth Under Various Iron Concentrations](https://samf21.shinyapps.io/iGEM_Data_Test/)
 - [Unit Conversion Calculator for Cyanobacteria and Yeast](https://samf21.shinyapps.io/iGEM_OD_Secchi/)
 
-The code for the Rmarkdown files that generate the shiny apps can be found in the app folder in this repo.
+The code for the Rmarkdown files that generate the shiny apps can be found in the **app** folder in this repo.
