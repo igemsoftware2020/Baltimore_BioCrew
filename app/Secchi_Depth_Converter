@@ -1,0 +1,54 @@
+library(shiny)
+
+od<-5
+ui <- fluidPage(
+
+    # Application title
+    titlePanel("Secchi Depth Converstion Tool"),
+
+    # Sidebar
+    sidebarLayout(
+        sidebarPanel(
+            selectInput("cell", "Select Cell Type", choices = c("","Cyanobacteria", "Yeast")),
+            selectInput("inp", "Select Input Measurement Unit", choices = c("","Secchi Depth", "OD","Cell Count")),
+            textInput("num", label = h3("Input Value"), value = ""),
+            selectInput("out", "Select Output Measurement Unit", choices = c("","Secchi Depth", "OD","Cell Count")),
+            actionButton("Submit", label = "Submit")
+        ),
+
+
+        mainPanel(
+           uiOutput("text")
+        )
+    )
+)
+
+# Define server logic
+server <- function(input, output) {
+    createnumber<-eventReactive(input$Submit, {req(input$Submit)
+        if (input$cell=="Cyanobacteria" & input$inp=="Secchi Depth" & input$out=="Secchi Depth"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of a Secchi Depth of",(as.numeric(input$num)),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="Secchi Depth" & input$out=="OD"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of an OD of",(10^{-1.1*log10(as.numeric(input$num))+1.16}),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="Secchi Depth" & input$out=="Cell Count"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of a Cell Count of",(10^{-0.0148*as.numeric(input$num)+6.32}),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="OD" & input$out=="Secchi Depth"){od<-paste("<h3>","An OD of",input$num, "is the equivilant of a Secchi Depth of",(58/55-10*log10(as.numeric(input$num))/11),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="OD" & input$out=="OD"){od<-paste("<h3>","An OD of",input$num, "is the equivilant of an OD of",(input$num),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="OD" & input$out=="Cell Count"){od<-paste("<h3>","(That conversion is not availible yet)","</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="Cell Count" & input$out=="Secchi Depth"){od<-paste("<h3>","A Cell Count of",input$num, "is the equivilant of a Secchi Depth of",(15800/37-log10(as.numeric(input$num))/0.0148),"</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="Cell Count" & input$out=="OD"){od<-paste("<h3>","(That conversion is not availible yet)","</h3>")}
+        else if (input$cell=="Cyanobacteria" & input$inp=="Cell Count" & input$out=="Cell Count"){od<-paste("<h3>","A Cell Count of",input$num, "is the equivilant of a Cell Count of",(input$num),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Secchi Depth" & input$out=="Secchi Depth"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of a Secchi Depth of",(input$num),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Secchi Depth" & input$out=="OD"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of an OD of",(10^{-0.0239*log10(as.numeric(input$num))+0.529}),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Secchi Depth" & input$out=="Cell Count"){od<-paste("<h3>","A Secchi Depth of",input$num, "is the equivilant of a Colony Count of",(10^{-0.0213*as.numeric(input$num)+3.04}),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="OD" & input$out=="Secchi Depth"){od<-paste("<h3>","An OD of",input$num, "is the equivilant of a Secchi Depth of",(0.529/0.0239-log10(as.numeric(input$num))/0.0239),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="OD" & input$out=="OD"){od<-paste("<h3>","An OD of",input$num, "is the equivilant of an OD of",(input$num),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="OD" & input$out=="Cell Count"){od<-paste("<h3>","(That conversion is not availible yet)","</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Cell Count" & input$out=="Secchi Depth"){od<-paste("<h3>","A Colony Count of",input$num, "is the equivilant of a Secchi Depth of",(3.04/0.0213-log10(as.numeric(input$num))/0.0213),"</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Cell Count" & input$out=="OD"){od<-paste("<h3>","(That conversion is not availible yet)","</h3>")}
+        else if (input$cell=="Yeast" & input$inp=="Cell Count" & input$out=="Cell Count"){od<-paste("<h3>","A Colony Count of",input$num, "is the equivilant of a Colony Count of",(input$num),"</h3>")}
+        
+    })
+    output$text<-renderUI(HTML(createnumber()))
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+    
